@@ -1,0 +1,92 @@
+.services {
+  margin-top: 170px;
+  display: flex;
+  flex-direction: column;
+
+  &__wraper {
+    gap: 1px;
+    display: grid;
+    grid-template-columns: repeat(4, 280px);
+    grid-template-rows: repeat(2, 180px);
+  }
+
+  &__heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 49px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+    &::before {
+      margin-bottom: 20px;
+      content: "";
+      width: 100px;
+      height: 4px;
+      background-color: $gold;
+    }
+  }
+
+  &__card {
+    width: 280px;
+    height: 180px;
+    display: grid;
+    place-items: center;
+    background: #393f47;
+    transition: 0.5s ease;
+    &:hover {
+      background-color: $gold;
+    }
+  }
+
+  &__box {
+    display: grid;
+    place-items: center;
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+
+  &__text {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: white;
+  }
+}
+
+@media only screen and (max-width: 1180px) {
+  .services {
+    &__wraper {
+      justify-content: center;
+      grid-template-columns: repeat(3, 280px);
+      grid-template-rows: repeat(3, 180px);
+    }
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  .services {
+    &__wraper {
+      grid-template-columns: repeat(2, 280px);
+      grid-template-rows: repeat(4, 180px);
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .services {
+    &__wraper {
+      grid-template-columns: repeat(1, 280px);
+      grid-template-rows: repeat(auto, 180px);
+    }
+  }
+}

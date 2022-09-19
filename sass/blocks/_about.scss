@@ -1,0 +1,141 @@
+.center {
+  width: 410px;
+  height: 482px;
+  background: #393f47;
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -2;
+}
+
+.about {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 200px;
+  z-index: -1;
+
+  &__heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 49px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+
+    &::before {
+      margin-bottom: 20px;
+      content: "";
+      width: 100px;
+      height: 4px;
+      background-color: $gold;
+    }
+  }
+
+  &__text {
+    max-width: 445px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    color: #ffffff;
+  }
+
+  &__right {
+    display: grid;
+    gap: 1px;
+    grid-template-rows: repeat(2, 160px);
+    grid-template-columns: repeat(3, 200px);
+    z-index: -1;
+  }
+
+  &__card {
+    display: grid;
+    place-items: center;
+    width: 200px;
+    height: 160px;
+    background-color: white;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 75px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__lorem {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  &__info {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .about {
+    &__right {
+      justify-content: center;
+      grid-template-rows: repeat(3, 160px);
+      grid-template-columns: repeat(2, 200px);
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .center {
+    width: 600px;
+  }
+
+  .about {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    &__right {
+      justify-content: center;
+      grid-template-rows: repeat(2, 160px);
+      grid-template-columns: repeat(3, 200px);
+    }
+  }
+}
+
+@media only screen and (max-width: 690px) {
+  .center {
+    display: none;
+  }
+  .about {
+    &__right {
+      justify-content: center;
+      grid-template-rows: repeat(3, 160px);
+      grid-template-columns: repeat(2, 200px);
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .about {
+    &__right {
+      grid-template-rows: repeat(1, 160px);
+      grid-template-columns: repeat(1, 200px);
+    }
+  }
+}
